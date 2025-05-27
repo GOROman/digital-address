@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デジタルアドレス検索サービス</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏠 デジタルアドレス検索</h1>
+            <p>デジタルアドレスを入力して郵便番号と住所を検索できます</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <div class="input-group">
+                    <label for="digitalAddress">デジタルアドレス</label>
+                    <input 
+                        type="text" 
+                        id="digitalAddress" 
+                        placeholder="例: 東京都新宿区西新宿2-8-1"
+                        maxlength="100"
+                    >
+                    <button id="searchBtn" onclick="searchAddress()">検索</button>
+                </div>
+                <div class="loading" id="loading" style="display: none;">
+                    <div class="spinner"></div>
+                    <span>検索中...</span>
+                </div>
+            </div>
+
+            <div class="results-section" id="results" style="display: none;">
+                <h2>検索結果</h2>
+                <div class="result-card">
+                    <div class="result-item">
+                        <label>郵便番号</label>
+                        <span id="postalCode">-</span>
+                    </div>
+                    <div class="result-item">
+                        <label>住所</label>
+                        <span id="address">-</span>
+                    </div>
+                    <div class="result-item">
+                        <label>デジタルアドレス</label>
+                        <span id="digitalAddressResult">-</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="error-section" id="error" style="display: none;">
+                <div class="error-card">
+                    <h3>⚠️ エラー</h3>
+                    <p id="errorMessage"></p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                <small>
+                    日本郵便株式会社のデジタルアドレスAPIを使用しています<br>
+                    <a href="https://guide-biz.da.pf.japanpost.jp/api/" target="_blank" rel="noopener">
+                        API Documentation
+                    </a>
+                </small>
+            </p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
