@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>デジタルアドレス検索</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>デジタルアドレス検索</h1>
+            <p>デジタルアドレスを入力して郵便番号と住所を検索できます</p>
+        </header>
+
+        <main>
+            <div class="search-form">
+                <div class="input-group">
+                    <label for="digitalAddress">デジタルアドレス:</label>
+                    <input 
+                        type="text" 
+                        id="digitalAddress" 
+                        placeholder="例: DA.TOKYO.CHIYODA.1-1-1" 
+                        autocomplete="off"
+                    >
+                    <button id="searchBtn" type="button">検索</button>
+                </div>
+            </div>
+
+            <div id="loading" class="loading hidden">
+                検索中...
+            </div>
+
+            <div id="result" class="result hidden">
+                <h2>検索結果</h2>
+                <div class="result-item">
+                    <label>郵便番号:</label>
+                    <span id="postalCode"></span>
+                </div>
+                <div class="result-item">
+                    <label>住所:</label>
+                    <span id="address"></span>
+                </div>
+            </div>
+
+            <div id="error" class="error hidden">
+                <h2>エラー</h2>
+                <p id="errorMessage"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>Japan Post デジタルアドレスAPI使用</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
